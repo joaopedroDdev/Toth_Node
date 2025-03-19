@@ -1,0 +1,52 @@
+
+  <link rel="stylesheet" href="./../../css/login.css">
+
+  <div class="container">
+    <div class="row mt-2">
+      <h3>Caso seja a primeira vez abrindo esse site clique no botão abaixo para inicializar um usuario para o aluno, professor e admin.</h3>
+      <p>
+        Aluno -> Usuario: aluno, Senha: Aluno123$ <br>
+        Professor -> Usuario: professor, Senha: Professor123$ <br>
+        Admin -> Usuario: admin, Senha: Admin123$
+      </p>
+      <button type="submit" onclick="inicializarUsuarios()" class="btn btn-block btn-primary">Inicializar usuarios</button>
+    </div>
+    <div class="row">
+      <div class="col-md-6 login-container">
+        <h3 class="text-center text-dark">Login - Aluno</h3>
+        <form action="/login" method="post">
+          <div class="form-group">
+            <input type="text" class="form-control" name="usuario" placeholder="Usuario: " value="" />
+          </div>
+          <br>
+          <div class="form-group">
+            <input type="password" class="form-control" name="senha" placeholder="Senha: " value="" />
+          </div>
+          <br>
+          <div class="form-group d-flex flex-column align-items-center">
+            <button type="submit" class="btn btn-block btn-primary">Login</button>
+            <a href="#" class="text-dark mt-2">Esqueceu sua senha?</a>
+          </div><br>
+        </form>
+      </div>
+
+      <div class="col-md-6 bg-custom-1 login-container">
+        <h3 class="text-center text-white">Login - Funcionarios</h3>
+        <form action="/login" method="post">
+          <div class="form-group">
+            <input type="text" class="form-control" name="usuario" placeholder="Usuario: " value="" />
+          </div>
+          <br>
+          <div class="form-group">
+            <input type="password" class="form-control" name="senha" placeholder="Senha: " value="" />
+          </div>
+          <br>
+          <div class="form-group d-flex flex-column align-items-center">            
+            <button type="submit" class="btn btn-block btn-light">Login</button>
+            <a href="#" class="text-dark mt-2" value="Login">Esqueceu sua senha?</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
