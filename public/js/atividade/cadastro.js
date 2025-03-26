@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", ()=>{
 
     function cadastrar() {
-        let input_ano_letivo = document.querySelector("#txtAno");
+        let input_ano_letivo = document.querySelector("#txtAnoTurma");
         let lista_validacao = [];
 
         if (input_ano_letivo.value === "") lista_validacao.push(input_ano_letivo.id);
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     function atualizar() {
         let input_id = document.querySelector("#hidden_id");
-        let input_ano_letivo = document.querySelector("#txtAno");
+        let input_ano_letivo = document.querySelector("#txtAnoTurma");
         let lista_validacao = [];
 
         if (input_ano_letivo.value === "") lista_validacao.push(input_ano_letivo.id);

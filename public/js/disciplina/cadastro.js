@@ -2,16 +2,19 @@
 document.addEventListener("DOMContentLoaded", ()=>{
 
     function cadastrar() {
-        let input_ano_letivo = document.querySelector("#txtAno");
+        let input_nome_disc = document.querySelector("#txtNome");
+        let input_carga_horaria = document.querySelector("#txtCargaHoraria");
         let lista_validacao = [];
 
-        if (input_ano_letivo.value === "") lista_validacao.push(input_ano_letivo.id);
+        if (input_nome_disc.value === "") lista_validacao.push(input_nome_disc.id);
+        if (input_carga_horaria.value === "0") lista_validacao.push(input_carga_horaria.id);
         if(lista_validacao.length == 0){
             let obj = {
-                ano_letivo : input_ano_letivo.value,
+                nome : input_nome_disc.value,
+                carga_horaria: input_carga_horaria.value
             }
 
-            fetch("/ano_letivo/cadastrar", {
+            fetch("/disciplina/cadastrar", {
                 method :"POST",
                 headers:{
                     "Content-Type": "application/json"
@@ -21,7 +24,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             .then((resposta) => resposta.json())
             .then((dados) => {
                 if(dados.ok) alert(dados.msg);
-                window.location.href = '/ano_letivo';
+                window.location.href = '/disciplina';
             })
             .catch((erro) => console.error("erro:", erro));
 
@@ -32,17 +35,20 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     function atualizar() {
         let input_id = document.querySelector("#hidden_id");
-        let input_ano_letivo = document.querySelector("#txtAno");
+        let input_nome_disc = document.querySelector("#txtNome");
+        let input_carga_horaria = document.querySelector("#txtCargaHoraria");
         let lista_validacao = [];
 
-        if (input_ano_letivo.value === "") lista_validacao.push(input_ano_letivo.id);
+        if (input_nome_disc.value === "") lista_validacao.push(input_nome_disc.id);
+        if (input_carga_horaria.value === "0") lista_validacao.push(input_carga_horaria.id);
         if(lista_validacao.length == 0){
             let obj = {
                 id: input_id.value,
-                ano_letivo : input_ano_letivo.value,
+                nome : input_nome_disc.value,
+                carga_horaria: input_carga_horaria.value
             }
 
-            fetch("/ano_letivo/editar", {
+            fetch("/disciplina/editar", {
                 method :"POST",
                 headers:{
                     "Content-Type": "application/json"
@@ -52,7 +58,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             .then((resposta) => resposta.json())
             .then((dados) => {
                 if(dados.ok) alert(dados.msg);
-                window.location.href = '/ano_letivo';
+                window.location.href = '/disciplina';
             })
             .catch((erro) => console.error("erro:", erro));
 
@@ -61,8 +67,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
         }
     }
 
-    let input_usuario = document.querySelector("#hidden_ano_letivo").value;
-    if (input_usuario == "") 
+    let input_disciplina = document.querySelector("#hidden_disciplina").value;
+    if (input_disciplina == "") 
         document.querySelector("#btn_cadastro").addEventListener("click", cadastrar);
     else
         document.querySelector("#btn_atualizar").addEventListener("click", atualizar);

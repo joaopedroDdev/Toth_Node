@@ -9,7 +9,8 @@ class Ano_Letivo_Controller{
     }
 
     listar_cadastro(req, resp){
-        resp.render("ano_letivo/cadastrar_view.ejs", { layout: "layout_admin_home.ejs"});
+        let ano_letivo_para_alterar  = undefined;
+        resp.render("ano_letivo/cadastrar_view.ejs", { layout: "layout_admin_home.ejs", ano_letivo_para_alterar });
     }
 
     async cadastrar_ano_letivo(req, resp) {
