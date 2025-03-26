@@ -18,7 +18,7 @@ class Disciplina_Model{
         return this.#nome;
     }
 
-    set nome(value){        
+    set nome(value){
         this.#nome = value;
     }
 
