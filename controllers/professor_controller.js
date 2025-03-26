@@ -6,4 +6,3 @@ class Professor_Controller {
     }
 }
 
-module.exports = Professor_Controller;

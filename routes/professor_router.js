@@ -1,5 +1,3 @@
-
-
 const express = require("express");
 const Professor_Controller = require("../controllers/professor_controller");
 
