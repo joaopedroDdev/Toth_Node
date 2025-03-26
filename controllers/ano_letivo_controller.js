@@ -85,12 +85,12 @@ class Ano_Letivo_Controller{
         if(lista_ano_letivo){
             resp.send({
                 ok : true,
-                msg: "Ano Letivo cadastrado com sucesso"
+                msg: "Ano Letivo Editado com sucesso"
             })
         } else{            
             resp.send({
                 ok : false,
-                msg: "Erro ao inserir o Ano Letivo"
+                msg: "Erro ao editar o Ano Letivo"
             })
         }
     }

@@ -8,6 +8,7 @@ const router_Admin = require("./routes/admin_router");
 const router_Professor = require("./routes/professor_router");
 const router_Ano_Letivo = require("./routes/ano_letivo_router");
 const router_Disciplina = require("./routes/disciplina_router");
+const router_Serie = require("./routes/serie_router");
 
 const app = express();
 
@@ -27,6 +28,7 @@ app.use("/admin",router_Admin);
 app.use("/professor",router_Professor);
 app.use("/ano_letivo",router_Ano_Letivo);
 app.use("/disciplina",router_Disciplina);
+app.use("/serie",router_Serie);
 
 app.listen(5000, ()=>{
     console.log("sistema em execução no localhost:5000");
