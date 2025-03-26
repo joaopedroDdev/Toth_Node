@@ -338,3 +338,19 @@ function mascara(m,t,e){
         
 }
         
+function limpar_validacao(){
+  let inputs = document.querySelectorAll("input" +  
+  ",select");
+  inputs.forEach(e => {
+      e.classList.remove("border-danger");
+  });
+}
+
+function validar_campos(lista){
+  limpar_validacao();
+  
+  for (let i = 0; i < lista.length; i++) {
+      let input = document.querySelector("#"+lista[i]);
+      input.classList.add("border-danger");
+  }
+}
