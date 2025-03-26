@@ -3,6 +3,7 @@ const Serie_Model = require("../models/serie_model");
 
 class Serie_Controller{
 
+
     async listar_view(req, resp){
         let serie_M = new Serie_Model();
         let lista_series = await serie_M.listar();
