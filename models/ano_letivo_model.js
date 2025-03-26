@@ -1,4 +1,4 @@
-const Database = require("../ultils/database");
+const Database = require("../utils/database");
 
 class Ano_Letivo_Model{
 
