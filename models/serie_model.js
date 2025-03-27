@@ -93,7 +93,13 @@ class Serie_Model{
         let resultado = await db.ExecutaComandoNonQuery(SQL_text, valores);        
         return resultado;
     }
-
+    async excluir(){
+        let SQL_text = "DELETE FROM series WHERE id_series = ?";
+        let db = new Database();
+        let valores = [this.#id];
+        let resultado = await db.ExecutaComandoNonQuery(SQL_text, valores);
+        return resultado;
+    }
     
 }
 
